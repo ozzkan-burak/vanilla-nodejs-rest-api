@@ -2,10 +2,8 @@ const http = require("http");
 const products = require("./data/products");
 
 const server = http.createServer((req, res)=>{
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/html');
-  res.write('<h1>Hello world</h1>');
-  res.end();
+  res.writeHead(200,{"Content-Type": "application/json"});
+  res.end(JSON.stringify(products))
 });
 
 PORT = process.env.PORT || 5000
