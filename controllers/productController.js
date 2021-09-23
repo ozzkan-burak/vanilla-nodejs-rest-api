@@ -1,5 +1,6 @@
 const Product = require('../models/productModel');
 
+
 // all products
 async function getProducts(req, res) {
   try {
@@ -31,7 +32,27 @@ async function getProduct(req, res, id) {
   }
 }
 
+// create product
+async function createProduct(req, res, id) {
+  try {
+    const product = {
+      title: 'Test Product',
+      description: 'This is my test product',
+      price: 100
+    }
+
+    const newProduct = await Product.create(product);
+
+    res.writeHead(201, {'Content-Type': 'application/json'});
+    res.end(JSON.stringify(newProduct))
+
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 module.exports = {
   getProducts,
-  getProduct
+  getProduct,
+  createProduct,
 }
