@@ -1,10 +1,10 @@
 const products = require("../data/products");
 const { v4: uuidv4 } = require('uuid');
 
-const {writeDataToFile} = require('../utils')
+const { writeDataToFile } = require('../utils')
 
 function findAll() {
-  return new Promise((resolve, reject)=> {
+  return new Promise((resolve, reject) => {
     resolve(products)
 
   });
@@ -12,17 +12,17 @@ function findAll() {
 
 function findById(id) {
 
-  return new Promise((resolve, reject)=> {
-    const product = products.find((p)=> p.id === id);
+  return new Promise((resolve, reject) => {
+    const product = products.find((p) => p.id === id);
     resolve(product);
   });
 };
 
 function create(product) {
-  
-  return new Promise((resolve, reject)=> {
 
-    const newProduct = {id: uuidv4(), ...product};
+  return new Promise((resolve, reject) => {
+
+    const newProduct = { id: uuidv4(), ...product };
     products.push(newProduct);
     writeDataToFile('./data/products.json', products);
     resolve(newProduct);

@@ -34,5 +34,17 @@
     "title": "Test Product",
     "description": "This is my test product",
     "price": 100
+  },
+  {
+    "id": "3a038742-235d-4e1e-a867-8dbe2f055e4f",
+    "title": "Buraks Product",
+    "description": "This is my product",
+    "price": 78
+  },
+  {
+    "id": "d75f4dcc-224d-4f13-b449-1340f2c7a383",
+    "title": "Buraks Product 2",
+    "description": "This is my product",
+    "price": 178
   }
 ]
